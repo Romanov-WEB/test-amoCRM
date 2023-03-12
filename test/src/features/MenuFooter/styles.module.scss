@@ -1,0 +1,51 @@
+@use "src/styles/variables/sizes";
+@use "src/styles/variables/breakpoints";
+@use "src/styles/mixins/typography";
+
+.menu {
+  font-family: 'Inter', sans-serif;
+
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin-top: 30px;
+  }
+}
+
+.header {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #656566;
+}
+
+.menuList {
+  width: sizes.$footer-width-menu-list;
+  height: sizes.$footer-height-menu-list;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    width: 370px;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin-top: 0;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.menuItem {
+  padding-top: 10px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #E4E5EA;
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    width: 40%
+  }
+}

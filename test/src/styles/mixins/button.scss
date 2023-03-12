@@ -1,0 +1,23 @@
+@use "src/styles/variables/sizes";
+@use "src/styles/variables/breakpoints";
+
+@mixin common-button-styles {
+  margin-top: 60px;
+  color: #E4E5EA;
+  padding: 21px 35px;
+  background: #4077F3;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  float: right;
+  cursor: pointer;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    display: none;
+  }
+}

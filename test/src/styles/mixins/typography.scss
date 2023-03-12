@@ -1,0 +1,51 @@
+@use "src/styles/variables/breakpoints";
+
+@mixin gray-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #656566;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@mixin ultra-big {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@mixin text-header {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin text-content {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+
+  @media screen and (max-width: breakpoints.$wide-screen-breakpoint) {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@mixin text-small {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+}

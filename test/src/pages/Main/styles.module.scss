@@ -1,0 +1,174 @@
+@use "src/styles/variables/sizes";
+@use "src/styles/variables/breakpoints";
+@use "src/styles/mixins/layout";
+@use "src/styles/mixins/button";
+@use "src/styles/mixins/typography";
+
+.layout {
+  @include layout.layout;
+}
+
+.logo {
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    display: none;
+  }
+}
+
+.container {
+  padding-top: 57px;
+  @include layout.container;
+  display: flex;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    padding: 20px 0;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    padding: 20px 16px;
+  }
+}
+
+.main {
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    width: 100%;
+    background-image: url("../../assets/image/bg/bgMobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    width: 100%;
+  }
+}
+
+.mainContent {
+  @include layout.container;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 94px;
+
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+}
+
+.header {
+  width: sizes.$article-width;
+  @include typography.ultra-big;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    width: 290px;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    width: 100%;
+  }
+}
+
+.welbexText {
+  @include typography.ultra-big;
+  font-weight: 900;
+  background: linear-gradient(92deg, #FCB045 27.14%, #FF3F78 121.36%), #E4E5EA;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  padding-top: 30px;
+  @include typography.text-header;
+  font-weight: 300;
+}
+
+.blockInfo {
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin-top: 45px;
+  }
+}
+
+.headerInfo {
+  @include typography.text-header;
+  text-align: right;
+
+  .headerText {
+    text-transform: uppercase;
+    background: linear-gradient(92deg, #FCB045 27.14%, #FF3F78 121.36%), #E4E5EA;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    text-align: left;
+
+    .headerText {
+      text-transform: lowercase;
+    }
+  }
+}
+
+.infoList {
+  width: sizes.$sidebar-width;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    width: 100%;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    display: none;
+  }
+}
+
+.infoItemHeader {
+  width: 135px;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 30px;
+
+  h3 {
+    @include typography.text-header;
+    text-align: right;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 6px;
+    @include typography.text-content;
+    text-align: right;
+  }
+}
+
+.infoListMobile {
+  display: none;
+
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    .item {
+      margin-top: 15px;
+      width: 45%;
+      display: flex;
+      align-items: center;
+      .dash {
+        width: 10px;
+        height: 2px;
+        background: linear-gradient(92deg, #FCB045 27.14%, #FF3F78 121.36%), #E4E5EA;
+        margin-right: 10px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.btnAdvice {
+  @include button.common-button-styles
+}

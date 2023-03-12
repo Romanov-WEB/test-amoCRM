@@ -1,0 +1,32 @@
+@use "src/styles/variables/sizes";
+@use "src/styles/variables/breakpoints";
+
+@mixin layout {
+  width: sizes.$header-width;
+  min-height: sizes.$header-height;
+  background-image: url("../../assets/image/bg/bgDesktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #E4E5EA;
+  font-family: 'Inter', sans-serif;
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    background-image: none;
+    width: 100%;
+  }
+}
+
+@mixin container {
+  width: sizes.$max-content-width;
+  margin: 0 auto;
+
+  @media screen and (max-width: breakpoints.$wide-screen-breakpoint) {
+    width: sizes.$table-content-width;
+  }
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    width: sizes.$mobile-content-width;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    width: sizes.$mobile-small-content-width;
+    padding: 0 16px;
+  }
+}

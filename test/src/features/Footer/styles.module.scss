@@ -1,0 +1,130 @@
+@use "src/styles/variables/sizes";
+@use "src/styles/variables/breakpoints";
+@use "src/styles/mixins/typography";
+@use "src/styles/mixins/layout";
+
+.footerContainer {
+  @include layout.container;
+  margin: 70px auto 0;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    margin: 25px auto 0;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin: 0 auto 16px;
+  }
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.blockFooterLeft {
+  display: flex;
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.infoCompany {
+  margin-right: 98px;
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    margin-right: 10px;
+  }
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    margin-right: 0;
+  }
+}
+
+.list {
+  width: sizes.$footer-width-list;
+  margin-top: 20px;
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin-top: 10px;
+  }
+}
+
+.item {
+  padding-top: 10px;
+  @include typography.text-content;
+  color: #E4E5EA;
+}
+
+.blockMessenger {
+  width: sizes.$footer-width-block-messenger;
+  text-align: right;
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    margin-top: 10px;
+    text-align: left;
+  }
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin-top: 0;
+  }
+}
+
+.messengerList {
+  margin-top: 20px;
+}
+
+.infoMessengerItemLink {
+  @include typography.text-content;
+  font-weight: 500;
+}
+
+.infoMessengerItem {
+  @include typography.text-content;
+  margin-top: 23px;
+  img {
+    width: 17px;
+    height: 16px;
+  }
+}
+
+.listGroupMessenger {
+  display: flex;
+  justify-content: flex-end;
+  li {
+    margin-left: 14px;
+  }
+
+  @media screen and (max-width: breakpoints.$main-tablet-breakpoint) {
+    justify-content: flex-start;
+
+    li {
+      margin-left: 0;
+      margin-right: 14px;
+    }
+  }
+}
+
+.headerFooter {
+  @include typography.gray-text;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    margin-top: 30px;
+  }
+}
+
+.footerBottom {
+  margin-top: 30px;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  text-align: right;
+  @include typography.text-small;
+
+  .politicLink {
+    text-decoration-line: underline;
+  }
+
+  @media screen and (max-width: breakpoints.$main-mobile-breakpoint) {
+    p{
+      text-align: left;
+    }
+  }
+}
